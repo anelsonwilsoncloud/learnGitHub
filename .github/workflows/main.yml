@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Run a one-liner script
-        run: echo "Hello, World!"
+      - name: Use Greet Action
+        uses: ./.github/actions/greet
+        with:
+          who-to-greet: 'Alina the Octocat'
