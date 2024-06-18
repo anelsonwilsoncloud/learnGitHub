@@ -1,0 +1,16 @@
+name: 'Greet Action'
+description: 'An action that greets the user'
+inputs:
+  who-to-greet:
+    description: 'The name of the person to greet'
+    required: true
+    default: 'World'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Print greeting
+      run: echo "Hello, ${{ inputs.who-to-greet }}!"
